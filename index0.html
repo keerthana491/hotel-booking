@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hotel Room Booking</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    background:linear-gradient(to right,#74ebd5,#ACB6E5);
+}
+
+form{
+    width:400px;
+    margin:30px auto;
+    padding:20px;
+    background:white;
+    border-radius:15px;
+    box-shadow:0 0 10px gray;
+}
+
+h2{
+    text-align:center;
+    color:darkblue;
+}
+
+label{
+    font-weight:bold;
+}
+
+input,select,textarea{
+    width:100%;
+    padding:8px;
+    margin:8px 0;
+    border-radius:5px;
+    border:1px solid #ccc;
+    box-sizing:border-box;
+}
+
+.radio-group{
+    margin:10px 0;
+}
+
+.radio-group input{
+    width:auto;
+    margin-right:5px;
+}
+
+input[type=submit],
+input[type=reset]{
+    width:48%;
+    padding:10px;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+input[type=submit]{
+    background:green;
+}
+
+input[type=reset]{
+    background:red;
+    float:right;
+}
+
+input[type=submit]:hover{
+    background:darkgreen;
+}
+
+input[type=reset]:hover{
+    background:darkred;
+}
+</style>
+
+</head>
+<body>
+
+<form action="booking.php" method="post">
+
+<h2>Hotel Room Booking</h2>
+
+<label>Guest Name:</label>
+<input type="text" name="name" required>
+
+<label>Email:</label>
+<input type="email" name="email" required>
+
+<label>Phone Number:</label>
+<input type="tel" name="phone" required>
+
+<label>Check-in Date:</label>
+<input type="date" name="checkin" required>
+
+<label>Check-out Date:</label>
+<input type="date" name="checkout" required>
+
+<label>Room Type:</label>
+<select name="room">
+    <option>Single</option>
+    <option>Double</option>
+    <option>Deluxe</option>
+    <option>Suite</option>
+</select>
+
+<label>Number of Guests:</label>
+<input type="number" name="guests" min="1" required>
+
+<label>Payment Method:</label>
+
+<div class="radio-group">
+    <input type="radio" name="payment" value="Cash" required> Cash
+    <input type="radio" name="payment" value="Card"> Card
+    <input type="radio" name="payment" value="UPI"> UPI
+</div>
+
+<label>Special Request:</label>
+<textarea name="request" rows="4"></textarea>
+
+<input type="submit" value="Book Now">
+<input type="reset" value="Reset">
+
+</form>
+
+</body>
+</html>
